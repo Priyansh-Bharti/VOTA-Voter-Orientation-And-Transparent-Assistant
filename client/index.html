@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1A3A6B">
+  <title>VOTA - Civic Assistant</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&family=Inter:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <div id="offline-banner" class="offline-banner" role="alert">
+      You are currently offline. Some features may be unavailable.
+    </div>
+
+    <header class="app-header" role="banner">
+      <div class="phase-badge" aria-live="polite">Phase 3: Live Voting</div>
+    </header>
+
+    <main id="app-main" role="main">
+      <!-- Screens -->
+      <section id="screen-home" class="screen active" aria-labelledby="home-heading">
+        <h1 id="home-heading">Welcome, Voter</h1>
+        <div class="skeleton" style="height: 200px; margin-top: 20px;"></div>
+      </section>
+
+      <section id="screen-timeline" class="screen" aria-labelledby="timeline-heading">
+        <h1 id="timeline-heading">Election Roadmap</h1>
+        <div class="stepper">
+          <div class="step completed"><h3>Registration</h3></div>
+          <div class="step active"><h3>Voting</h3></div>
+          <div class="step"><h3>Results</h3></div>
+        </div>
+      </section>
+
+      <section id="screen-chat" class="screen" aria-labelledby="chat-heading">
+        <h1 id="chat-heading">Ask VOTA</h1>
+        <div class="chat-container" id="chat-messages" aria-live="polite">
+          <div class="bubble vota">Hello! How can I help you today?</div>
+        </div>
+      </section>
+
+      <section id="screen-map" class="screen" aria-labelledby="map-heading">
+        <h1 id="map-heading">Polling Booths</h1>
+        <div id="map-canvas" style="height: 300px; background: #eee;"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" role="navigation" aria-label="Main Navigation">
+      <a href="#" class="nav-item active" data-screen="home" aria-label="Home">
+        <span>🏠</span><span>Home</span>
+      </a>
+      <a href="#" class="nav-item" data-screen="timeline" aria-label="Timeline">
+        <span>📅</span><span>Timeline</span>
+      </a>
+      <a href="#" class="nav-item" data-screen="chat" aria-label="Chat">
+        <span>💬</span><span>Chat</span>
+      </a>
+      <a href="#" class="nav-item" data-screen="map" aria-label="Map">
+        <span>📍</span><span>Map</span>
+      </a>
+      <a href="#" class="nav-item" data-screen="profile" aria-label="Profile">
+        <span>👤</span><span>Profile</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="js/app.js" type="module"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+</body>
+</html>

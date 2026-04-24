@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - VOTA</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .offline-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: var(--spacing-lg);
+    }
+    .offline-icon { font-size: 64px; margin-bottom: var(--spacing-md); }
+  </style>
+</head>
+<body>
+  <div class="offline-content">
+    <div class="offline-icon">📶</div>
+    <h1>No Connection</h1>
+    <p>VOTA needs an internet connection to sync election data. Please check your network and try again.</p>
+    <button onclick="window.location.reload()" style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--color-primary); color: white; border: none; border-radius: var(--radius-md); cursor: pointer;">
+      Retry Connection
+    </button>
+  </div>
+</body>
+</html>
