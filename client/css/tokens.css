@@ -1,0 +1,33 @@
+:root {
+  /* The Civic Architect - Design Tokens */
+  --vota-blue-900: #002451; /* Diplomatic Blue */
+  --vota-blue-700: #004085;
+  --vota-orange-500: #F4720B; /* Empowerment Orange */
+  --vota-white: #FFFFFF;
+  --vota-gray-50: #F9FAFB;
+  --vota-gray-100: #F3F4F6;
+  --vota-gray-900: #111827;
+
+  /* Semantic Colors */
+  --color-primary: var(--vota-blue-900);
+  --color-accent: var(--vota-orange-500);
+  --color-bg: var(--vota-gray-50);
+  --color-surface: var(--vota-white);
+  --color-text: var(--vota-gray-900);
+  --color-success: #10B981;
+  --color-error: #EF4444;
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Shapes */
+  --radius-editorial: 12px;
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /* Animations */
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
