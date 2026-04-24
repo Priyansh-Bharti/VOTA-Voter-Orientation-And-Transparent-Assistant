@@ -10,7 +10,7 @@ export const logger = {
   info: (message: string, meta?: Record<string, unknown>): void => {
     // In production, this would use a library like winston or pino.
     // For the scaffold, we ensure no console.log is used directly in logic.
-    process.stdout.write(JSON.stringify({ level: 'info', message, ...meta }) + '\n');
+    process.stdout.write(`${JSON.stringify({ level: 'info', message, ...meta })}\n`);
   },
 
   /**
@@ -21,13 +21,13 @@ export const logger = {
    */
   error: (message: string, error?: Error, meta?: Record<string, unknown>): void => {
     process.stderr.write(
-      JSON.stringify({
+      `${JSON.stringify({
         level: 'error',
         message,
         error: error?.message,
         stack: error?.stack,
         ...meta,
-      }) + '\n',
+      })}\n`,
     );
   },
 };

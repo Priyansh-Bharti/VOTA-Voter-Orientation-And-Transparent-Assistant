@@ -1,8 +1,9 @@
+import cors from 'cors';
 import express, { Express } from 'express';
 import helmet from 'helmet';
-import cors from 'cors';
+
+import { APP_CONSTANTS } from './constants.js';
 import { logger } from './utils/logger.js';
-import { APP_CONSTANTS } from './constants/constants.js';
 
 /**
  * Initializes the Express application.
@@ -26,7 +27,7 @@ const startServer = (): void => {
   const port = process.env.PORT || APP_CONSTANTS.PORT_DEFAULT;
 
   app.listen(port, () => {
-    logger.info(`Server started`, { port });
+    logger.info('Server started', { port });
   });
 };
 

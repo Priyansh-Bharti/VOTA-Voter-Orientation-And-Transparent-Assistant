@@ -23,6 +23,8 @@
     "max-lines": ["error", 200],
     "max-lines-per-function": ["error", 30],
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/ban-ts-comment": "error"
+    "@typescript-eslint/ban-ts-comment": "error",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off"
   }
 }
